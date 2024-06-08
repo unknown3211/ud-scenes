@@ -1,0 +1,101 @@
+.App-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #241c3b;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 500px;
+    height: 340px;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+  
+  .App-header h1 {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .App-header p {
+    font-size: 13px;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .text-box {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .text-area {
+    width: 100%;
+    padding: 10px;
+    margin-top: -20px;
+    color: white;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #1c142a;
+  }
+
+  .distance-text {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .distance-area {
+    width: 100%;
+    padding: 5px;
+    margin-top: -20px;
+    color: white;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #1c142a;
+  }
+
+  .distance-area::placeholder {
+    font-size: 12px;
+  }
+
+  .text-area, .distance-area {
+    resize: none;
+  }
+
+  .divider-centered {
+    height: 2px;
+    padding: 1px;
+    background-color: black;
+    margin-top: 10px;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .buttons-container {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    gap: 250px;
+    padding-top: 15px;
+  }
+  
+  .App-button {
+    background-color: #1b1528;
+    color: #AFB3C1;
+    padding: 10px 20px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
