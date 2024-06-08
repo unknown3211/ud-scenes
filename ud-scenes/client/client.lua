@@ -19,11 +19,11 @@ end)
 RegisterNUICallback('placescene', function(data, cb)
   local text = data.text
   local distance = tonumber(data.distancenumber)
-  if distance < 0 or distance > 10 then
+  if distance < 3 or distance > 10 then
     TriggerEvent('chat:addMessage', {
       color = { 255, 0, 0},
       multiline = true,
-      args = {"System", "Distance must be between 0 and 10"}
+      args = {"System", "Distance must be between 3 and 10"}
   })
   else
     exports['ud-laser']:ToggleCreationLaser(function(coords)
