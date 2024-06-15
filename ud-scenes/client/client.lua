@@ -30,7 +30,8 @@ RegisterNUICallback('placescene', function(data, cb)
       local textData = {
         text = text,
         coords = {x = coords.x, y = coords.y, z = coords.z},
-        distance = distance
+        distance = distance,
+        owner = GetPlayerServerId(PlayerId())
       }
       table.insert(DrawingText, textData)
       TriggerServerEvent('placescene:placed', textData)
@@ -75,3 +76,23 @@ function DrawText3D(text, x, y, z)
     DrawText(_x, _y)
   end
 end
+
+RegisterCommand('removescene', function() 
+  for i = #DrawingText, 1, -1 do 
+    if DrawingText[i].owner == GetPlayerServerId(PlayerId()) then 
+      TriggerServerEvent('placescene:removed', DrawingText[i])
+      table.remove(DrawingText, i) 
+      break 
+    end 
+  end 
+end)
+
+RegisterNetEvent('placescene:client:removed')
+AddEventHandler('placescene:client:removed', function(sceneData)
+  for i, textData in ipairs(DrawingText) do
+    if textData.owner == sceneData.owner and textData.text == sceneData.text then
+      table.remove(DrawingText, i)
+      break
+    end
+  end
+end)
